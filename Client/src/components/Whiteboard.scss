@@ -1,0 +1,65 @@
+.whiteboard-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    padding-top: 0;
+    margin-top: 0;
+    background-color: #f0f0f0; // Or any background color you want for the whiteboard area
+  
+    .whiteboard {
+      flex-grow: 1;
+      width: 100%;
+      min-height: 100%;
+      overflow-y:auto;
+      padding-left: 10px;
+      background-color: #fff; // The whiteboard itself is white
+      border: 1px solid #ccc;
+      margin-top: -20px;
+      /* Add more styles for your whiteboard here */
+    }
+  
+    .user-list {
+      display: flex;
+      //margin-top: 1rem;
+      position: relative;
+      align-self: flex-start;
+      z-index: 10;
+      top: 25px;
+      left: 10px;  
+      .user-profile-pic {
+        width: 30px; // Set as needed
+        height: 30px; // Set as needed
+        border-radius: 50%;
+        margin-right: -15px; // Overlap the images
+        border: 2px solid #fff; // White border to separate overlapping images
+      }
+  
+      .more-users-btn {
+        background-color: transparent;
+        color: #0056b3;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        text-decoration: underline;
+        margin-left: 10px; // Give some space after the last profile picture
+        &:hover {
+          color: #03366d;
+        }
+      }
+
+
+      .save-time-text {
+        margin-left: 10px; // Adjust spacing as needed
+        color: #666; // Adjust color as needed
+        font-size: 14px; // Adjust font size as needed
+        display: flex;
+        position: relative;
+        left : 225%;
+      }
+    }
+  }
+  

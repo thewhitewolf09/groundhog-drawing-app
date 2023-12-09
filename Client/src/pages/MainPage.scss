@@ -1,0 +1,28 @@
+.main-page {
+    display: flex;
+    flex-direction: column;
+  
+    .main-content {
+      display: flex;
+      flex-grow: 1;
+      height: 86vh;
+
+      .whiteboard-container {
+        flex-grow: 1;
+        position: relative; // For absolute positioning of user images and the "+4 more" button
+      }
+  
+      .toolbox {
+        width: 120px;
+        margin-bottom: 0;
+      }
+    }
+
+ 
+  }
+  .footer {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }

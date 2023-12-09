@@ -1,0 +1,86 @@
+.toolbox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 0;
+  background-color: #f0f0f0; // Or any background color you want for the whiteboard area
+  justify-content: space-between;
+  .tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    height: 70%;
+    width: 120px;
+    box-shadow: 1px 1px 10px gray;
+
+    .tool-btn {
+      padding: 10px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      width: 100%;
+      background-color: transparent;
+      font-size: 30px;
+      color: #0056b3;
+      border: none;
+
+      &:hover {
+        background-color: #efefef;
+      }
+    }
+
+    .color-picker {
+      margin-bottom: 5px;
+    }
+
+    .basic-colors {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      width: 80%;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 10px;
+
+      .color-swatch {
+        flex:0 calc(30px);
+        height: 30px;
+        cursor: pointer;
+        border: 1px solid #d1d1d1;
+        border-radius: 4px;
+
+        &:hover {
+          border-color: #a1a1a1;
+          box-shadow: #0056b3 1px 1px 10px;
+        }
+
+        &.selected {
+          border-color: #a1a1a1;
+          box-shadow: #0056b3 1px 1px 10px;
+        }
+      }
+    }
+  }
+
+  .bottom-btn {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      margin: 10px 10px;
+      padding: 10px;
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: #024185;
+      }
+    }
+  }
+}
