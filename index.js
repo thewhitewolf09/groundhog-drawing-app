@@ -17,10 +17,14 @@ require("./db/connection.js");
 // // CORS Configuration
 //"http://localhost:3000"
 const corsOptions = {
-  origin: 'https://groundhog.netlify.app', // Allow your frontend origin
-  optionsSuccessStatus: 200
+  origin: "https://groundhog.netlify.app",
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ['Content-Type', 'Authorization'],
 };
+
 app.use(cors(corsOptions));
+
 
 
 // app.use(cors({
