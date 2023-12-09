@@ -1,2 +1,1 @@
-export const serverurl = "https://groundhog-drawing-app.vercel.app";
-// export const serverurl = "http://localhost:5000";
+export const serverurl = process.env.REACT_APP_SERVER_URL || "http://localhost:5000";
