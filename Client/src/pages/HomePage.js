@@ -182,7 +182,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(process.env.REACT_APP_SERVER_URL);
 
     if (!validateForm()) {
       return;
