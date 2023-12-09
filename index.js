@@ -42,8 +42,8 @@ app.use((err, req, res, next) => {
 
 // Routes
 app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "../Client/build")))
-  res.sendFile(path.resolve(__dirname, "../Client/build/index.html"))
+  app.use(express.static(path.resolve(__dirname, "Client","build")))
+  res.sendFile(path.resolve(__dirname, "Client","build","index.html"))
 });
 
 // API Routes
