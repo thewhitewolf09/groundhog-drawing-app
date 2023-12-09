@@ -1,2 +1,0 @@
-# GroundHog Drawing App
-
