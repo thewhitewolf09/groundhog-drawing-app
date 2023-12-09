@@ -15,17 +15,18 @@ dotenv.config({ path: "./.env" });
 require("./db/connection.js");
 
 // CORS Configuration
-const whitelist = ["http://localhost:3000"];
+const whitelist = ["http://localhost:3000","https://groundhog-drawing-ltc6kj53c-thewhitewolf09.vercel.app/"];
 const corsOptions = {
   credentials: true,
   origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error("Origin not allowed by CORS"));
     }
   },
 };
+
 
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -41,10 +42,14 @@ app.use((err, req, res, next) => {
 });
 
 // Routes
-app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "Client","build")))
-  res.sendFile(path.resolve(__dirname, "Client","build","index.html"))
+// Serve static files from the React app
+app.use(express.static(path.resolve(__dirname, "Client", "build")));
+
+// The "catchall" handler: for any request that doesn't match one above, send back React's index.html file.
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
 });
+
 
 // API Routes
 app.use("/api/v1", require("./router/main.js"));
