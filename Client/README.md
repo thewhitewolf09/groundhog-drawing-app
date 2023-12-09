@@ -1,4 +1,2 @@
-# stockup
+# GroundHog Drawing App
 
-netlify deploy on:
-https://comicstrip.netlify.app/

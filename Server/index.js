@@ -4,6 +4,7 @@ const http = require('http');
 const socketIo = require('socket.io');
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 
 const app = express();
 const server = http.createServer(app);
@@ -41,7 +42,8 @@ app.use((err, req, res, next) => {
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  app.use(express.static(path.resolve(__dirname, "../Client/build")))
+  res.sendFile(path.resolve(__dirname, "../Client/build/index.html"))
 });
 
 // API Routes
