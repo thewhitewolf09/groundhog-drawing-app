@@ -14,23 +14,28 @@ dotenv.config({ path: "./.env" });
 // Database Connection (MongoDB with Mongoose)
 require("./db/connection.js");
 
-// CORS Configuration
-const whitelist = ["http://localhost:3000","https://groundhog.netlify.app"];
-const corsOptions = {
+// // CORS Configuration
+// const whitelist = ["http://localhost:3000","https://groundhog.netlify.app"];
+// const corsOptions = {
+//   credentials: true,
+//   origin: (origin, callback) => {
+//     console.log("Origin of request:", origin);
+//     if (!origin || whitelist.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Origin not allowed by CORS"));
+//     }
+//   },
+// };
+// app.use(cors(corsOptions));
+
+
+app.use(cors({
   credentials: true,
-  origin: (origin, callback) => {
-    console.log("Origin of request:", origin);
-    if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Origin not allowed by CORS"));
-    }
-  },
-};
+  origin: '*'  // Allows all origins
+}));
 
 
-
-app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
