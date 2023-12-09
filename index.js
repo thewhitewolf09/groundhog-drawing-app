@@ -15,7 +15,7 @@ dotenv.config({ path: "./.env" });
 require("./db/connection.js");
 
 // CORS Configuration
-const whitelist = ["http://localhost:3000","https://groundhog-drawing-ltc6kj53c-thewhitewolf09.vercel.app/"];
+const whitelist = ["http://localhost:3000","https://groundhog-drawing-rev1i9j9h-thewhitewolf09.vercel.app/"];
 const corsOptions = {
   credentials: true,
   origin: (origin, callback) => {
