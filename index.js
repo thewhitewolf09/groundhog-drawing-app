@@ -19,6 +19,7 @@ const whitelist = ["http://localhost:3000","https://groundhog-drawing-ltc6kj53c-
 const corsOptions = {
   credentials: true,
   origin: (origin, callback) => {
+    console.log("Origin of request:", origin);
     if (!origin || whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -26,6 +27,7 @@ const corsOptions = {
     }
   },
 };
+
 
 
 app.use(cors(corsOptions));
