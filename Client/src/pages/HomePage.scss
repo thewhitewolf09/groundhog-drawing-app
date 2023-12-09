@@ -43,7 +43,6 @@
       .image-section {
         flex: 1;
         img {
-            margin-top: 50px;
           max-width: 100%;
           height: auto;
         }
@@ -68,11 +67,11 @@
           max-width: 300px;
   
           input {
-            margin-bottom: 1rem;
             padding: 0.5rem;
             border: 1px solid #ddd;
             border-radius: 0.25rem;
             outline: #0056b3;
+            margin-top: 20px;
           }
   
           .join-button {
@@ -82,10 +81,17 @@
             color: white;
             cursor: pointer;
             border-radius: 0.25rem;
+            margin-top: 20px;
   
             &:hover {
               background-color: #024995;
             }
+          }
+
+          .error{
+            color: red;
+            font-weight: bold;
+            margin-top: 5px;
           }
         }
       }
@@ -130,7 +136,13 @@
     .login-form {
       display: flex;
       flex-direction: column;
-  
+
+      .error{
+        color: red;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
       input {
         margin-bottom: 15px;
         padding: 15px;
