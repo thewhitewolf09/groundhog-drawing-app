@@ -16,7 +16,7 @@ const Header = ({ onNewCanvas, onJoinSession, onLoadCanvas}) => {
   const onLogout =async()=>{
     
     try {
-      await axios.get('api/v1/logout');
+      await axios.get(`${serverurl}/api/v1/logout`);
       navigate("/");; // Replace 'Login' with your login screen route name
     } catch (error) {
       console.error('Logout error:', error);

@@ -110,7 +110,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-       "api/v1/register",
+       `${serverurl}/api/v1/register`,
         formData
       );
       console.log(response.data);
@@ -188,7 +188,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("api/v1/login", formData);
+      const response = await axios.post(`${serverurl}/api/v1/login`, formData);
       console.log(response);
       // Set token and redirect to dashboard
       navigate("/mainpage");
