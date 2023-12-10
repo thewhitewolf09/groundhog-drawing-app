@@ -20,6 +20,7 @@ const corsOptions = {
   credentials: true,
   origin: (origin, callback) => {
     console.log("Origin of request:", origin);
+    console.log(whitelist);
     if (whitelist.includes(origin) || !origin) {
       callback(null, true);
     } else {
