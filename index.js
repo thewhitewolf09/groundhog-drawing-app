@@ -15,21 +15,13 @@ dotenv.config({ path: "./.env" });
 require("./db/connection.js");
 
 // CORS Configuration
-const whitelist = ["http://localhost:3000", "https://groundhog.netlify.app","https://www.groundhog.netlify.app"];
 const corsOptions = {
-  credentials: true,
-  origin: (origin, callback) => {
-    console.log("Origin of request:", origin);
-    console.log(whitelist);
-    if (origin && whitelist.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  }
+  origin: ['http://localhost:3000', 'https://groundhog.netlify.app', 'https://www.groundhog.netlify.app'],
+  credentials: true
 };
 
 app.use(cors(corsOptions));
+
 
 
 
