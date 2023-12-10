@@ -16,26 +16,18 @@ require("./db/connection.js");
 
 // CORS Configuration
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://groundhog.netlify.app', 'https://www.groundhog.netlify.app'],
-  credentials: true
+  origin: ["http://localhost:3000", "https://groundhog.netlify.app"],
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOptions));
 
 
-
-
 app.use(express.json());
 app.use(cookieParser());
 
-// Error Handler for CORS
-app.use((err, req, res, next) => {
-  if (err.message === "Origin not allowed by CORS") {
-    res.status(403).json({ message: "Origin not allowed" });
-  } else {
-    next(err);
-  }
-});
 
 
 
