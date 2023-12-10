@@ -21,14 +21,12 @@ const corsOptions = {
   origin: (origin, callback) => {
     console.log("Origin of request:", origin);
     console.log(whitelist);
-    if (whitelist.includes(origin) || !origin) {
-      console.log("YYYYYYYY");
+    if (origin && whitelist.includes(origin)) {
       callback(null, true);
     } else {
-      console.log("xxxxxxxx");
       callback(new Error("Not allowed by CORS"));
     }
-  },
+  }
 };
 
 app.use(cors(corsOptions));
