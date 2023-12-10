@@ -22,6 +22,7 @@ const corsOptions = {
     console.log("Origin of request:", origin);
     console.log(whitelist);
     if (whitelist.includes(origin) || !origin) {
+      console.log("YYYYYYYY");
       callback(null, true);
     } else {
       console.log("xxxxxxxx");
