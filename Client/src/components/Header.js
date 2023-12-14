@@ -40,6 +40,7 @@ const Header = ({ onNewCanvas, onJoinSession, onLoadCanvas}) => {
           />
           {dropdownOpen && (
             <div className="profile-dropdown">
+            <button >Sumit Nirmal</button>
               <button onClick={onLogout}>Logout</button>
             </div>
           )}
